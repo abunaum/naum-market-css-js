@@ -9,8 +9,8 @@
     Toggle.VERSION = '3.7.0-beta'
 
     Toggle.DEFAULTS = {
-        on: 'Buka',
-        off: 'Tutup',
+        on: 'On',
+        off: 'Off',
         onstyle: 'primary',
         offstyle: 'light',
         size: 'normal',
