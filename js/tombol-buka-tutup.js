@@ -1,19 +1,5 @@
-/*\
-|*| ========================================================================
-|*| Bootstrap Toggle: bootstrap4-toggle.js v3.7.0
-|*| https://gitbrent.github.io/bootstrap4-toggle/
-|*| ========================================================================
-|*| Copyright 2018-2019 Brent Ely
-|*| Licensed under MIT
-|*| ========================================================================
-\*/
-
 + function($) {
     'use strict';
-
-    // TOGGLE PUBLIC CLASS DEFINITION
-    // ==============================
-
     var Toggle = function(element, options) {
         this.$element = $(element)
         this.options = $.extend({}, this.defaults(), options)
@@ -23,8 +9,8 @@
     Toggle.VERSION = '3.7.0-beta'
 
     Toggle.DEFAULTS = {
-        on: 'On',
-        off: 'Off',
+        on: 'Buka',
+        off: 'Tutup',
         onstyle: 'primary',
         offstyle: 'light',
         size: 'normal',
@@ -157,7 +143,6 @@
             if (!data) $this.data('bs.toggle', (data = new Toggle(this, options)))
             if (typeof option === 'string' && data[option] && typeof optArg === 'boolean') data[option](optArg)
             else if (typeof option === 'string' && data[option]) data[option]()
-            //else if (option && !data[option]) console.log('bootstrap-toggle: error: method `'+ option +'` does not exist!');
         })
     }
 
@@ -165,18 +150,10 @@
 
     $.fn.bootstrapToggle = Plugin
     $.fn.bootstrapToggle.Constructor = Toggle
-
-    // TOGGLE NO CONFLICT
-    // ==================
-
     $.fn.toggle.noConflict = function() {
         $.fn.bootstrapToggle = old
         return this
     }
-
-    // TOGGLE DATA-API
-    // ===============
-
     $(function() {
         $('input[type=checkbox][data-toggle^=toggle]').bootstrapToggle()
     })
