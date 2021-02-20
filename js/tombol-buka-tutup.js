@@ -15,7 +15,7 @@
         offstyle: 'light',
         size: 'normal',
         style: '',
-        width: null,
+        width: '90px',
         height: null
     }
 
