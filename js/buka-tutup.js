@@ -13,8 +13,8 @@
     Toggle.VERSION = '2.2.0'
 
     Toggle.DEFAULTS = {
-        on: 'On',
-        off: 'Off',
+        on: 'Buka',
+        off: 'Tutup',
         onstyle: 'primary',
         offstyle: 'default',
         size: 'normal',
