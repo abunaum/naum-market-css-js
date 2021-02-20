@@ -19,8 +19,8 @@
         offstyle: 'default',
         size: 'normal',
         style: '',
-        width: null,
-        height: null
+        width: '1em',
+        height: '1em'
     }
 
     Toggle.prototype.defaults = function() {
