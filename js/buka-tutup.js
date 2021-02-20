@@ -17,7 +17,7 @@
         off: 'Tutup',
         onstyle: 'primary',
         offstyle: 'default',
-        size: 'large',
+        size: 'normal',
         style: '',
         width: null,
         height: null

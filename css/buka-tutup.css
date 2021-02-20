@@ -1,118 +1,192 @@
-.checkbox label .toggle,
-.checkbox-inline .toggle {
-    margin-left: -20px;
-    margin-right: 5px;
-}
+/*  Toggle Switch  */
 
-.toggle {
-    position: relative;
-    overflow: hidden;
-}
-
-.toggle input[type="checkbox"] {
+.toggleSwitch span span {
     display: none;
 }
 
-.toggle-group {
-    position: absolute;
-    width: 200%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    transition: left 0.35s;
-    -webkit-transition: left 0.35s;
-    -moz-user-select: none;
-    -webkit-user-select: none;
+@media only screen {
+    .toggleSwitch {
+        display: inline-block;
+        height: 18px;
+        position: relative;
+        overflow: visible;
+        padding: 0;
+        margin-left: 50px;
+        cursor: pointer;
+        width: 40px;
+        user-select: none;
+    }
+
+    .toggleSwitch * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .toggleSwitch label,
+    .toggleSwitch>span {
+        line-height: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+
+    .toggleSwitch input:focus~a,
+    .toggleSwitch input:focus+label {
+        outline: none;
+    }
+
+    .toggleSwitch label {
+        position: relative;
+        z-index: 3;
+        display: block;
+        width: 100%;
+    }
+
+    .toggleSwitch input {
+        position: absolute;
+        opacity: 0;
+        z-index: 5;
+    }
+
+    .toggleSwitch>span {
+        position: absolute;
+        left: -50px;
+        width: 100%;
+        margin: 0;
+        padding-right: 50px;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .toggleSwitch>span span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        display: block;
+        width: 50%;
+        margin-left: 50px;
+        text-align: left;
+        font-size: 0.9em;
+        width: 100%;
+        left: 15%;
+        top: -1px;
+        opacity: 0;
+    }
+
+    .toggleSwitch a {
+        position: absolute;
+        right: 50%;
+        z-index: 4;
+        display: block;
+        height: 100%;
+        padding: 0;
+        left: 2px;
+        width: 18px;
+        background-color: #fff;
+        border: 1px solid #CCC;
+        border-radius: 100%;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .toggleSwitch>span span:first-of-type {
+        color: #ccc;
+        opacity: 1;
+        left: 45%;
+    }
+
+    .toggleSwitch>span:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 50px;
+        top: -2px;
+        background-color: #fafafa;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
+    .toggleSwitch input:checked~a {
+        border-color: #fff;
+        left: 100%;
+        margin-left: -8px;
+    }
+
+    .toggleSwitch input:checked~span:before {
+        border-color: #0097D1;
+        box-shadow: inset 0 0 0 30px #0097D1;
+    }
+
+    .toggleSwitch input:checked~span span:first-of-type {
+        opacity: 0;
+    }
+
+    .toggleSwitch input:checked~span span:last-of-type {
+        opacity: 1;
+        color: #fff;
+    }
+
+    /* Switch Sizes */
+    .toggleSwitch.large {
+        width: 60px;
+        height: 27px;
+    }
+
+    .toggleSwitch.large a {
+        width: 27px;
+    }
+
+    .toggleSwitch.large>span {
+        height: 29px;
+        line-height: 28px;
+    }
+
+    .toggleSwitch.large input:checked~a {
+        left: 41px;
+    }
+
+    .toggleSwitch.large>span span {
+        font-size: 1.1em;
+    }
+
+    .toggleSwitch.large>span span:first-of-type {
+        left: 50%;
+    }
+
+    .toggleSwitch.xlarge {
+        width: 80px;
+        height: 36px;
+    }
+
+    .toggleSwitch.xlarge a {
+        width: 36px;
+    }
+
+    .toggleSwitch.xlarge>span {
+        height: 38px;
+        line-height: 37px;
+    }
+
+    .toggleSwitch.xlarge input:checked~a {
+        left: 52px;
+    }
+
+    .toggleSwitch.xlarge>span span {
+        font-size: 1.4em;
+    }
+
+    .toggleSwitch.xlarge>span span:first-of-type {
+        left: 50%;
+    }
 }
 
-.toggle.off .toggle-group {
-    left: -100%;
-}
 
-.toggle-on {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 50%;
-    margin: 0;
-    border: 0;
-    border-radius: 0;
-}
-
-.toggle-off {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    right: 0;
-    margin: 0;
-    border: 0;
-    border-radius: 0;
-}
-
-.toggle-handle {
-    position: relative;
-    margin: 0 auto;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    height: 100%;
-    width: 0px;
-    border-width: 0 1px;
-}
-
-.toggle.btn {
-    min-width: 59px;
-    min-height: 34px;
-}
-
-.toggle-on.btn {
-    padding-right: 24px;
-}
-
-.toggle-off.btn {
-    padding-left: 24px;
-}
-
-.toggle.btn-lg {
-    min-width: 79px;
-    min-height: 45px;
-}
-
-.toggle-on.btn-lg {
-    padding-right: 31px;
-}
-
-.toggle-off.btn-lg {
-    padding-left: 31px;
-}
-
-.toggle-handle.btn-lg {
-    width: 40px;
-}
-
-.toggle.btn-sm {
-    min-width: 50px;
-    min-height: 30px;
-}
-
-.toggle-on.btn-sm {
-    padding-right: 20px;
-}
-
-.toggle-off.btn-sm {
-    padding-left: 20px;
-}
-
-.toggle.btn-xs {
-    min-width: 35px;
-    min-height: 22px;
-}
-
-.toggle-on.btn-xs {
-    padding-right: 12px;
-}
-
-.toggle-off.btn-xs {
-    padding-left: 12px;
-}
+/*  End Toggle Switch  */
